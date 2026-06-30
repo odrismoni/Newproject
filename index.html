@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor Micaela</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Estructura de Secciones (Slides) */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Botones Estilizados */
+        .btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 25px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+        }
+
+        /* Tipografías y Contenedores */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 700px;
+        }
+
+        /* Estilo imagen de la NASA */
+        .nasa-img {
+            max-width: 80%;
+            max-height: 40vh;
+            border-radius: 15px;
+            margin-top: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        /* Contador */
+        .counter-container {
+            font-size: 2rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #ff416c;
+            margin-top: 20px;
+        }
+
+        .counter-number {
+            color: #ff416c;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="slide active" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1920')">
+        <div class="card">
+            <h1>Hola, Mi Amor ❤️, Como estás?</h1>
+            <p>Tengo algo muy especial que mostrarte. ¿Estás lista para dar un paseo por nuestra historia?</p>
+            <button class="btn" onclick="nextSlide(1)">Enserio?🤩, Bueno entonces empecemos</button>
+        </div>
+    </section>
+
+    <section class="slide" style="background-color: #1a1a2e;">
+        <div class="card">
+            <h1>El día que todo cambió ✨</h1>
+            <p>El día que te conocí, el universo estaba celebrando nuestro encuentro. Mirá lo que la NASA fotografió ese mismo día:</p>
+            <img class="nasa-img" src="https://imagine.gsfc.nasa.gov/hst_bday/may-24" alt="Foto de la NASA">
+            <br>
+            <button class="btn" onclick="nextSlide(2)">Continuar</button>
+        </div>
+    </section>
+
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1920')">
+        <div class="card">
+            <h1>Por tu forma en la que me amas... 😚</h1>
+            <p>Me gustás porque cuando entrás, te quedás. En mi cabeza, en mi pecho, en la forma en que veo los días. Ya no son grises. Sos vos el color que no sabía que me faltaba. Eres mi rincón favorito en el mundo.💗</p>
+            <button class="btn" onclick="nextSlide(3)">¿Qué más?</button>
+        </div>
+    </section>
+
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://ciencia.nasa.gov/wp-content/uploads/sites/2/2023/06/MAIN_IMAGE__Star_Formation-jpg.webp')">
+        <div class="card">
+            <h1>Por tu risa 🤣</h1>
+            <p>Me gustás por tu risa. Esa que es tuya y de nadie más. La que rompe mi mal humor sin pedir permiso y me obliga a sonreír aunque esté cansado del mundo. Tu bondad, tu paciencia y la forma en que cuidas a las personas que amas me enamoran cada día más. Eres una persona increíble.</p>
+            <button class="btn" onclick="nextSlide(4)">Siguiente</button>
+        </div>
+    </section>
+    
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://ciencia.nasa.gov/wp-content/uploads/sites/2/2023/06/MAIN_IMAGE__Star_Formation-jpg.webp')">
+        <div class="card">
+            <h1>Por tu manera de dar consuelo 😎</h1>
+            <p>Me gustás porque sos contradictoria y por eso sos real. Sos calma cuando mi cabeza es guerra, y sos fuego cuando yo me acostumbro a estar tibio. Con vos no hay punto medio aburrido. O me sanás, o me hacés arder, y las dos me gustan.</p>
+            <button class="btn" onclick="nextSlide(5)">Siguiente</button>
+        </div>
+    </section>
+    
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://ciencia.nasa.gov/wp-content/uploads/sites/2/2023/06/MAIN_IMAGE__Star_Formation-jpg.webp')">
+        <div class="card">
+            <h1>Por tu forma en la que me quieres 🥹</h1>
+            <p>Me gustás porque me mirás de verdad. Sin apuro, sin máscaras. Y bajo esa mirada yo me desarmo entero y no me da miedo. Porque sé que vos no te vas a ir con los pedazos.</p>
+            <button class="btn" onclick="nextSlide(6)">Siguiente</button>
+        </div>
+    </section>
+
+<section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://ciencia.nasa.gov/wp-content/uploads/sites/2/2023/06/MAIN_IMAGE__Star_Formation-jpg.webp')">
+        <div class="card">
+            <h1>Por tu forma de cuidarme</h1>
+            <p>Me gustás porque sos mi lugar. No el lugar donde escondo lo roto. El lugar donde lo roto aprende a latir de nuevo.</p>
+            <button class="btn" onclick="nextSlide(7)">Siguiente</button>
+        </div>
+    </section>
+    
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://ciencia.nasa.gov/wp-content/uploads/sites/2/2023/06/MAIN_IMAGE__Star_Formation-jpg.webp')">
+        <div class="card">
+            <h1>Por tu forma de ser totamente💗 </h1>
+            <p>Y si un día la vida nos deja ser más que nosotros dos... si nos casamos y tenemos hijos, yo ruego que salgan a vos. Que tengan tu paciencia, tu forma de amar sin medir, tu manera de hacer que la gente se sienta en casa. 
+Porque si voy a dejar algo en este mundo, que sea una parte tuya repitiéndose indefinidamente. Me gustás mucho, Micaela. Tanto que ya no sé dónde termino yo y dónde empezás vos.</p>
+            <button class="btn" onclick="nextSlide(8)">Siguiente</button>
+        </div>
+    </section>
+
+    <section class="slide" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://imagine.gsfc.nasa.gov/hst_bday/may-24')">
+        <div class="card">
+            <h1>Nuestro Tiempo Juntos Amorcito 🗓️💗</h1>
+            <p>Cada segundo a tu lado ha sido perfecto. Este es el tiempo exacto que llevamos escribiendo nuestra historia:</p>
+            
+            <div class="counter-container" id="contador">
+                Cargando nuestro tiempo y todo lo que podremos llegar a ser💗...
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 1.1rem; italic;">Y esto es solo el comienzo de todo lo que vamos a llegar a ser🥹. Te amo mucho amor, espero que no lo dudes, siempre que pienses algo malo de mí acuérdate de esto..</p>
+        </div>
+    </section>
+
+    <script>
+        // --- CONFIGURACIÓN DEL CONTADOR ---
+        // Pon aquí la fecha exacta en que empezaron (Año, Mes [0-11], Día, Hora, Minutos)
+        // Ojo: Enero es 0, Febrero es 1, Marzo es 2... Diciembre es 11.
+        const fechaInicio = new Date(2026, 4, 23, 03, 0, 0); // Ejemplo: 15 de Mayo de 2024, 20:00 hs
+
+        // --- SISTEMA DE NAVEGACIÓN ---
+        const slides = document.querySelectorAll('.slide');
+        
+        function nextSlide(currentIndex) {
+            slides[currentIndex - 1].classList.remove('active');
+            slides[currentIndex].classList.add('active');
+        }
+
+        // --- LÓGICA DEL CONTADOR EN TIEMPO REAL ---
+        function actualizarContador() {
+            const ahora = new Date();
+            const diferencia = ahora - fechaInicio;
+
+            // Cálculos matemáticos de tiempo
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById('contador').innerHTML = `
+                <span class="counter-number">${dias}</span> días, 
+                <span class="counter-number">${horas}</span> horas, 
+                <span class="counter-number">${minutos}</span> min y 
+                <span class="counter-number">${segundos}</span> seg
+            `;
+        }
+
+        // Ejecutar contador cada segundo
+        setInterval(actualizarContador, 1000);
+        actualizarContador(); // Primera ejecución inmediata
+    </script>
+</body>
+</html>
